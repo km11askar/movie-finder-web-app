@@ -1,0 +1,46 @@
+/* responsive.css - Responsive Styles */
+
+/* Mobile First */
+.movies-grid {
+    grid-template-columns: 1fr;
+}
+
+.contact-container {
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contact-container {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .movies-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hamburger menu for mobile */
+@media (max-width: 900px) {
+    #main-nav ul {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+    #main-nav.active ul {
+        display: flex;
+    }
+    #hamburger {
+        display: flex;
+    }
+}
